@@ -1,0 +1,13 @@
+<div id="frame">
+  <div>Compontents lists</div>
+  <div>
+    <input type="text" [(ngModel)]="input">
+    <button (click)="add()">Dodaj do listy</button>
+  </div>
+  <ul>
+    <li *ngFor="let el of elements; index as i">
+      {{el}}
+      <button (click)="remove(i)">Delete</button>
+    </li>
+  </ul>
+</div>
