@@ -1,0 +1,41 @@
+/* Stylizacja dla sekcji z informacjami o osobie */
+.person {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.person h2 {
+  margin-bottom: 20px;
+}
+
+/* Stylizacja dla sekcji informacji */
+.info {
+  margin-top: 20px;
+}
+
+/* Stylizacja pojedynczej sekcji informacji */
+.info-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Stylizacja nagłówków sekcji informacji */
+.info-details span:first-child {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Stylizacja dla alertu */
+.alert {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}

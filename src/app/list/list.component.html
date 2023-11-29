@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let people of peoples, let i = index">
+    <a [routerLink]="['/details',i]">
+    <span>{{people.firstName}}</span>
+    <span>{{people.lastName}}</span>
+    <span> ({{i}}) </span>
+    </a>
+    <button class="delete" (click)="deletePerson(i)">Delete</button>
+  </li>
+</ul>

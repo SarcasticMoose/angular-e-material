@@ -1,0 +1,15 @@
+footer,header{
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+header{
+  height: 100px;
+}
+
+
+.router-outlet{
+  padding: 20px;
+}
+

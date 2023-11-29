@@ -1,0 +1,37 @@
+<div class="details-cointaer">
+  <div>
+    <a routerLink="/">Back</a>
+  </div>
+
+  <div *ngIf="person" class="person">
+    <h2>{{person.firstName}} {{person.lastName}}</h2>
+
+    <div class="info">
+      <div class="info-details">
+        <span>ID:</span>
+        <span>{{personId}}</span>
+      </div>
+      <div class="info-details">
+        <span>Age:</span>
+        <span>{{person.age}}</span>
+      </div>
+      <div class="info-details">
+        <span>City:</span>
+        <span>{{person.address.city}}</span>
+      </div>
+      <div class="info-details">
+        <span>Street:</span>
+        <span>{{person.address.street}}</span>
+      </div>
+      <div class="info-details">
+        <span>Post Code:</span>
+        <span>{{person.address.postCode}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert" *ngIf="!person">
+    Person not found!
+  </div>
+
+</div>
