@@ -1,0 +1,25 @@
+{
+  "todos": [
+    {
+      "title": "Pierwsze zadanie",
+      "deadline": "2022-01-28",
+      "completed": false,
+      "archived": false,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Hello Again World",
+      "deadline": "2000-12-29T15:31:00.000Z",
+      "completed": true,
+      "archived": true
+    },
+    {
+      "title": "Pierwsze zadanie",
+      "deadline": "2023-12-29T10:31:00.000Z",
+      "completed": true,
+      "archived": true,
+      "id": 3
+    }
+  ]
+}

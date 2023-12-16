@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="add-task-section">
+    <h2>Add New Task</h2>
+    <form>
+      <label for="newTaskTitle">Title:</label>
+      <input type="text" id="newTaskTitle" [(ngModel)]="newTask.title" [ngModelOptions]="{standalone: true}" required>
+      <label for="newTaskDeadline">Deadline:</label>
+      <input type="datetime-local" id="newTaskDeadline" [(ngModel)]="newTask.deadline" [ngModelOptions]="{standalone: true}">
+      <button type="button" (click)="addTask()">Add Task</button>
+    </form>
+  </div>
+  <div *ngFor="let task of tasks" class="task-item">
+    <div class="task-title" [ngClass]="{'completed-task': task.completed}">{{ task.title }}</div>
+    <div class="task-deadline">
+      Deadline: {{ task.deadline }}
+    </div>
+    <div>
+      <div>
+        <button (click)="completeTask(task)" class="complete-button">{{!task.completed ? "Complete" : "Incomplete"}}</button>
+      </div>
+    </div>
+  </div>
+  <button (click)="archiveTask()" class="archive-button">Archive</button>
+</div>
