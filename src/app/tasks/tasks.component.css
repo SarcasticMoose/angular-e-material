@@ -2,19 +2,15 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
 }
 
 .container {
   max-width: 800px;
   margin: 50px auto;
-  background-color: #fff;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
-
-/* Add New Task Section */
 
 .add-task-section {
   margin-bottom: 20px;
@@ -23,7 +19,6 @@ body {
 .add-task-section h2 {
   font-size: 24px;
   margin-bottom: 15px;
-  color: #333;
 }
 
 form {
@@ -34,7 +29,6 @@ form {
 label {
   font-weight: bold;
   margin-bottom: 5px;
-  color: #555;
 }
 
 input {
@@ -47,18 +41,10 @@ input {
 button {
   padding: 12px;
   cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 16px;
 }
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Task List */
 
 .task-item {
   border: 1px solid #ddd;
@@ -67,29 +53,20 @@ button:hover {
   margin: 10px 0;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
   transition: background-color 0.3s ease;
 }
-
-.task-item:hover {
-  background-color: #f5f5f5;
-}
-
 .task-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #333;
 }
 
 .task-deadline {
   margin-bottom: 15px;
-  color: #777;
 }
 
 .completed-task {
   text-decoration: line-through;
-  color: #888;
 }
 
 .complete-button {
@@ -108,20 +85,12 @@ button:hover {
 .archive-button {
   padding: 12px;
   cursor: pointer;
-  background-color: #28a745;
-  color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 16px;
   margin-top: 15px;
 }
 
-.archive-button:hover {
-  background-color: #218838;
-}
-
-
 .completed-task {
   text-decoration: line-through;
-  color: #888;
 }

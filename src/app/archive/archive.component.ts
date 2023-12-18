@@ -32,20 +32,10 @@ export class ArchiveComponent implements OnInit {
     });
   }
 
-  unarchive(task: Task) {
-    const observables: Observable<any>[] = [];
-    for (const task of this.tasks) {
-      if (!task.completed) {
-        continue;
-      }
-
-      task.archived = false;
-      observables.push(this._taskService.put(task));
-    }
-
-    forkJoin(observables).subscribe(() => {
+  unarchived(task: Task) {
+    task.archived = false;
+    this._taskService.put(task).subscribe(() => {
       this.ngOnInit();
-    });
-
+    })
   }
 }

@@ -67,4 +67,18 @@ export class TasksComponent implements OnInit{
       this.ngOnInit();
     });
   }
+
+  canAddTask(task: Task) {
+    return (task.title && task.deadline !== undefined && (new Date(task.deadline).toUTCString() < new Date().toUTCString()));
+  }
+
+  canArchiveTask() {
+    let can = false;
+      this.tasks.forEach((task) => {
+        if(task.completed){
+          can = true;
+        }
+      })
+    return can;
+  }
 }

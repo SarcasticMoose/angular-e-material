@@ -1,14 +1,18 @@
-<div class="container">
-  <div *ngFor="let task of tasks" class="task-item">
-    <div class="task-title" [ngClass]="{'completed-task': task.completed}">{{ task.title }}</div>
-    <div class="task-deadline">
-      Deadline: {{ task.deadline }}
-    </div>
-    <div>
-      <div>
-        <button (click)="delete(task)" class="complete-button">Delete task</button>
-        <button (click)="unarchive(task)" class="archive-button">Unarchived</button>
-      </div>
-    </div>
-  </div>
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card *ngFor="let task of tasks" class="task-item">
+    <mat-card-content>
+      <mat-card *ngFor="let task of tasks" class="task-item">
+        <mat-card-content>
+          <div class="task-title">{{ task.title }}</div>
+          <div class="task-deadline">
+            Deadline: {{ task.deadline }}
+          </div>
+        </mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <button mat-raised-button color="warn" (click)="delete(task)" class="complete-button">Delete Task</button>
+          <button mat-raised-button color="primary" (click)="unarchived(task)" class="archive-button">Unarchive</button>
+        </div>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
 </div>

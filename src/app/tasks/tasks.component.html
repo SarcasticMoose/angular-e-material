@@ -1,24 +1,52 @@
-<div class="container">
-  <div class="add-task-section">
-    <h2>Add New Task</h2>
-    <form>
-      <label for="newTaskTitle">Title:</label>
-      <input type="text" id="newTaskTitle" [(ngModel)]="newTask.title" [ngModelOptions]="{standalone: true}" required>
-      <label for="newTaskDeadline">Deadline:</label>
-      <input type="datetime-local" id="newTaskDeadline" [(ngModel)]="newTask.deadline" [ngModelOptions]="{standalone: true}">
-      <button type="button" (click)="addTask()">Add Task</button>
-    </form>
-  </div>
-  <div *ngFor="let task of tasks" class="task-item">
-    <div class="task-title" [ngClass]="{'completed-task': task.completed}">{{ task.title }}</div>
-    <div class="task-deadline">
-      Deadline: {{ task.deadline }}
-    </div>
-    <div>
-      <div>
-        <button (click)="completeTask(task)" class="complete-button">{{!task.completed ? "Complete" : "Incomplete"}}</button>
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card class="add-task-section">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Add New Task</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <mat-label>Title:</mat-label>
+          <input matInput type="text" id="newTaskTitle" [(ngModel)]="newTask.title" [ngModelOptions]="{standalone: true}" required>
+          <mat-hint>Enter at least one character</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="datepicker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="button" [disabled]="!canAddTask(newTask)" (click)="addTask()">Add Task</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngFor="let task of tasks" class="task-item">
+    <mat-card-content>
+      <div class="task-title" [ngClass]="{'completed-task': task.completed}">{{ task.title }}</div>
+      <div class="task-deadline">
+        Deadline: {{ task.deadline }}
       </div>
-    </div>
-  </div>
-  <button (click)="archiveTask()" class="archive-button">Archive</button>
+      <div>
+        <button mat-raised-button [color]=" task.completed ? 'warn' : 'accent'" (click)="completeTask(task)">
+          {{!task.completed ? "Complete" : "Incomplete"}}
+        </button>
+      </div>
+      <div>
+        <mat-checkbox color="primary" (click)="completeTask(task)">
+        </mat-checkbox>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <button mat-fab (click)="archiveTask()" [disabled]="!canArchiveTask()" class="archive-button" color="primary">
+    <mat-icon>archive</mat-icon>
+  </button>
 </div>
